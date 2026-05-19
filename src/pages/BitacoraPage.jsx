@@ -57,6 +57,9 @@ export default function BitacoraPage() {
               </div>
               <ul className="bitacora-card__list">
                 <li>
+                  <strong>2026-05-18:</strong> Migración completa del sitio a React (Vite + SPA), refactorización del estado (Hooks) y componentización de la UI con asistencia de IA.
+                </li>
+                <li>
                   <strong>2026-04-20:</strong> Ajuste integral del perfil y stack con foco Back-End
                   + IA.
                 </li>
@@ -147,6 +150,21 @@ export default function BitacoraPage() {
           </div>
 
           <div className="minutas-list">
+            <article className="minuta-item">
+              <div className="minuta-item__date">2026-05-18</div>
+              <div className="minuta-item__body">
+                <h3>Migración a React (TP2)</h3>
+                <p>
+                  Se decidió refactorizar el proyecto completo pasando de HTML/JS estático a una Single Page Application con React y Vite.
+                </p>
+                <ul>
+                  <li>Se implementó React Router DOM para la navegación sin recargas.</li>
+                  <li>Se consolidaron los datos en <strong>teamData.js</strong> (Single Source of Truth).</li>
+                  <li>La lógica imperativa del DOM se reemplazó por Hooks (useState, useEffect).</li>
+                </ul>
+              </div>
+            </article>
+
             <article className="minuta-item">
               <div className="minuta-item__date">2026-04-08</div>
               <div className="minuta-item__body">

@@ -1,7 +1,7 @@
 ---
 title: Arquitectura
 status: activo
-updated: 2026-04-19
+updated: 2026-05-18
 ---
 
 # Arquitectura
@@ -11,6 +11,9 @@ updated: 2026-04-19
 ```text
 TP-FrontEnd-DesarrolloDeSistemasWeb/
 ├─ README.md
+├─ package.json
+├─ vite.config.js
+├─ index.html
 ├─ Documentacion/
 │  ├─ Index-Principal.md
 │  ├─ Consigna TP1 - Markdown.md
@@ -31,55 +34,54 @@ TP-FrontEnd-DesarrolloDeSistemasWeb/
 │  │     ├─ Marcelo-IA.md
 │  │     └─ Melisa-IA.md
 │  └─ Imagenes/
-└─ Proyecto/
-	├─ index.html
-	├─ bitacora.html
-	├─ eduardo.html
-	├─ leandro.html
-	├─ marcelo.html
-	├─ melisa.html
-	├─ css/
-	│  ├─ base/
-	│  ├─ components/
-	│  ├─ layout/
-	│  ├─ pages/
-	│  ├─ theme/
-	│  └─ style.css
-	├─ js/
-	│  └─ main.js
-	└─ img/
-		├─ avatares/
-		├─ fondos/
-		└─ ui/
+└─ src/
+	├─ main.jsx
+	├─ App.jsx
+	├─ components/
+	│  ├─ BackToTop.jsx
+	│  ├─ Footer.jsx
+	│  ├─ MovieCarousel.jsx
+	│  ├─ MusicGrid.jsx
+	│  ├─ Navbar.jsx
+	│  ├─ TechIcons.jsx
+	│  └─ TechStack.jsx
+	├─ data/
+	│  └─ teamData.js
+	├─ pages/
+	│  ├─ BitacoraPage.jsx
+	│  ├─ HomePage.jsx
+	│  └─ ProfilePage.jsx
+	└─ styles/
+		└─ style.css
 ```
 
-## Frontend (entregable TP1)
+## Frontend React (entregable TP2)
 
-- `index.html`: portada principal y acceso a todas las secciones.
-- `bitacora.html`: registro del proceso dentro del menu principal.
-- `eduardo.html`, `leandro.html`, `marcelo.html`, `melisa.html`: una pagina por integrante.
-- `css/style.css`: entrypoint que enlaza la arquitectura modular de estilos (variables, componentes y vistas).
-- `js/main.js`: interacciones compartidas del sitio.
-- `img/`: recursos visuales usados por la web final.
+- `index.html`: Punto de entrada base para Vite. Contiene la precarga de tipografías y el div `#root`.
+- `src/main.jsx`: Punto de anclaje de React (ReactDOM.createRoot) y proveedor del `BrowserRouter`.
+- `src/App.jsx`: Maneja el ruteo de la Single Page Application (SPA) e inicializa el Dark Mode persistente.
+- `src/pages/`: Componentes principales que representan vistas enteras (`HomePage`, `BitacoraPage`, y un componente dinámico `ProfilePage`).
+- `src/components/`: Componentes modulares y reutilizables de UI (Navbar, Footer, Carrusel).
+- `src/data/teamData.js`: Centralización (Single Source of Truth) del contenido de los integrantes. Permite un renderizado dinámico de las páginas de perfil.
+- `src/styles/style.css`: Estilos combinados globalmente. Toda la lógica de "diseño modular" está compactada aquí, utilizando Custom Properties para Material Design 3.
 
 ## Criterios
 
-- Navegacion comun en todas las paginas.
-- Componentes reutilizables.
-- Interacciones JS pequenas y visuales en portada y paginas individuales.
+- Enrutamiento sin recargas (Client-Side Routing) usando `react-router-dom`.
+- Estado gestionado exclusivamente mediante React Hooks (`useState`, `useEffect`), eliminando la manipulación manual del DOM.
+- Componentes altamente reutilizables.
 - Responsive en 400px, 900px y 1200px.
 
 ## Convenciones
 
-- Los HTML viven en la raiz de `Proyecto`.
-- Guía de Diseño: Utilizar rigurosamente `DESIGN.md` como fuente de verdad para componentes, colores y animaciones estéticas.
-- La hoja de estilos principal es `css/style.css`, la cual funciona únicamente como índice mediante `@import`. El CSS debe distribuirse modularmente dentro de sus respectivos subdirectorios (`base/`, `components/`, etc.).
-- Se usa un solo script global: `js/main.js`.
-- Imagenes de entrega solo en `Proyecto/img`.
-- Nombres de archivos en minuscula y sin espacios.
+- Toda la lógica del aplicativo reside dentro de `src/`.
+- Guía de Diseño: Utilizar rigurosamente `DESIGN.md` como fuente de verdad para colores y estéticas (Glassmorphism, Atmospheric Glow).
+- Las páginas deben renderizarse dinámicamente mapeando el contenido desde `src/data/teamData.js`.
+- Nombres de componentes React siempre en `PascalCase` (Ej: `Navbar.jsx`).
+- Nombres de directorios en `camelCase` o `minusculas`.
 - Las minutas de reunion usan formato `YYYY-MM-DD.md`.
-- Cada cambio asistido por IA se registra en `Documentacion/Bitacora/BitacoraIA/`.
+- Cada cambio asistido por IA se registra en `Documentacion/Bitacora/BitacoraIA/` y en `BitacoraPage.jsx`.
 
 ## Regla de trabajo
 
-Evitar estilos y funciones duplicadas. Si una solucion sirve para varias paginas, debe vivir en un bloque reutilizable o en una funcion compartida.
+Evitar componentes masivos. La lógica de presentación visual debe ser pura y funcional; si un elemento crece demasiado o es reutilizable en otra página, debe extraerse a su propio archivo dentro de `src/components/`.

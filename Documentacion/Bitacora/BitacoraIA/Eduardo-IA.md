@@ -14,6 +14,25 @@ Cada entrada representa un cambio puntual realizado con asistencia de IA.
 
 ## Changelog
 
+### [2026-05-18] Migración de sitio a React (Vite + SPA)
+
+- Tipo: Arquitectura y código frontend.
+- Modelo: DeepMind Antigravity.
+- Herramienta: Antigravity IDE Plugin.
+- Archivos impactados:
+  - `src/*` (Migración completa)
+  - `package.json`, `vite.config.js`
+  - `README.md`
+- Cambio:
+  - Se orquestó la refactorización completa del sitio desde HTML estático y Vanilla JS hacia una arquitectura basada en componentes con React y Vite.
+  - Se eliminó la manipulación manual del DOM y se reemplazó por Hooks (`useState`, `useEffect`).
+  - Se abstrajeron los datos repetidos (información de integrantes, películas, stacks técnicos) en un archivo JSON/JS llamado `teamData.js`.
+  - Se implementó enrutamiento del lado del cliente utilizando `React Router DOM`.
+- Impacto:
+  - Mayor mantenibilidad, componentes reutilizables, navegación instantánea y base técnica escalable.
+- Validación manual:
+  - Se validó la carga de las rutas dinámicas en el navegador y el correcto funcionamiento del "Dark Mode" y menú móvil bajo el nuevo esquema de React.
+
 ### [2026-05-03] Corrección menú hamburguesa y refactor pequeño de JS
 
 - Tipo: Código frontend.
