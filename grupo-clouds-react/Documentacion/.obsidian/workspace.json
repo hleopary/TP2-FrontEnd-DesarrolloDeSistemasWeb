@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "6db1e69987006db0",
+    "type": "split",
+    "children": [
+      {
+        "id": "13261a6a599cef92",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0c6f344abec3c5e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bitacora/BitacoraIA/Eduardo-IA.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Eduardo-IA"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4a08cef73490ec5b",
+    "type": "split",
+    "children": [
+      {
+        "id": "98036452b3ad18af",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d13ab3f9dbfd5567",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "1d336dcdc819b17c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "741a2fc7c7039015",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 240.5
+  },
+  "right": {
+    "id": "6db90bd96a12f16e",
+    "type": "split",
+    "children": [
+      {
+        "id": "0a6f170b7778fa67",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2d40e12f43841d09",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Tareas.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de Tareas"
+            }
+          },
+          {
+            "id": "214d0362772cdc71",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Tareas.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de Tareas"
+            }
+          },
+          {
+            "id": "65d67d927073cd03",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "5720379bfd79ca98",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "022167eab671a5fd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Tareas.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de Tareas"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-kanban:Create new board": false,
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
+    }
+  },
+  "active": "0c6f344abec3c5e5",
+  "lastOpenFiles": [
+    "Proyecto-Core/Consignas-Faltantes-Por-Definir.md",
+    "Index-Principal.md",
+    "Consigna TP1 - Markdown.md",
+    "Bitacora/BitacoraIA/Melisa-IA.md",
+    "Bitacora/BitacoraIA/Marcelo-IA.md",
+    "Bitacora/BitacoraIA/Leandro-IA.md",
+    "Bitacora/BitacoraIA/Index-BitacoraIA.md",
+    "Bitacora/BitacoraIA/Eduardo-IA.md",
+    "Bitacora/Bitacora/Index-Bitacora.md",
+    "Bitacora/Bitacora/2026-04-08.md",
+    "Bitacora/BitacoraIA",
+    "Bitacora/Bitacora",
+    "Bitacora",
+    "output/slide-decks/README.md",
+    "output/reports/README.md",
+    "output/slide-decks",
+    "output/reports",
+    "output/query-results.md",
+    "output",
+    "img/Pasted image 20260408210208.png",
+    "img",
+    "Sprints/Sprint-6-Docs.md",
+    "Sprints/Sprint-6-Docs-Kanban.md",
+    "Sprints/Sprint-5-Assets.md",
+    "Sprints/Sprint-5-Assets-Kanban.md",
+    "Sprints/Sprint-4-JS.md",
+    "Sprints/Sprint-4-JS-Kanban.md",
+    "Sprints/Sprint-3-Estilos.md",
+    "Sprints/Sprint-3-Estilos-Kanban.md",
+    "Sprints/Sprint-2-Individuales.md",
+    "Sprints/Sprint-2-Individuales-Kanban.md",
+    "Sprints/Sprint-1-Core.md",
+    "Sprints/Sprint-1-Core-Kanban.md",
+    "Sprints/Sprint-0-Setup.md",
+    "Sprints",
+    "Referencia",
+    "wiki/frontend-systems",
+    "Canvas/Canvas-Tareas.canvas",
+    "Canvas/Canvas-Documentacion.canvas",
+    "Imagenes/Pasted image 20260408210208.png"
+  ]
+}
