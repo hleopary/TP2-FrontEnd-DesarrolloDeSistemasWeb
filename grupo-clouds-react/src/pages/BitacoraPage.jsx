@@ -116,7 +116,7 @@ export default function BitacoraPage() {
             <article className="bitacora-card">
               <div className="bitacora-card__head">
                 <h3>Melisa</h3>
-                <Link to="/melisa">Ver perfil</Link>
+                <Link to="/melissa">Ver perfil</Link>
               </div>
               <ul className="bitacora-card__list">
                 <li>

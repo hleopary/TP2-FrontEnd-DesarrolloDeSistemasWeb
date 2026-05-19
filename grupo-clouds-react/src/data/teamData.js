@@ -126,7 +126,7 @@ export const teamData = [
     ]
   },
   {
-    slug: 'melisa',
+    slug: 'melissa',
     firstName: 'Melissa',
     lastName: 'Galeano',
     role: 'Desarrolladora y tester',

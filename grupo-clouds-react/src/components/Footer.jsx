@@ -40,7 +40,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="footer__copyright">© 2026 Grupo Clouds.</div>
+      <div className="footer__copyright">© 2026 Grupo Clouds. Atmospheric Infrastructure for the Modern Enterprise.</div>
     </footer>
   )
 }
