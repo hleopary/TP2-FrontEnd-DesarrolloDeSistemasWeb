@@ -2,7 +2,7 @@
 title: Bitacora IA - Marcelo
 status: en-progreso
 integrante: marcelo
-updated: 2026-05-03
+updated: 2026-05-21
 ---
 
 # Bitacora IA - Marcelo
@@ -91,4 +91,29 @@ Cada entrada representa un cambio puntual realizado con asistencia de IA.
 - Impacto:
   - Establece la base de código frontend y la arquitectura visual que todo el equipo deberá usar para el resto de la cursada/proyecto.
 - Validacion manual:
-  - El equipo revisó los HTMLs generados comprobando la responsividad y la cohesión con la dirección estética dictada.
+   - El equipo revisó los HTMLs generados comprobando la responsividad y la cohesión con la dirección estética dictada.
+
+### [2026-05-21] Planificación TP2: Upgrade Vite, Consigna, Issues y Arquitectura de Slices
+
+- Tipo: Arquitectura, Documentación y Planificación.
+- Modelo: DeepSeek V4 Pro (OpenCode).
+- Herramienta: Agente SDD + GitHub Issues.
+- Archivos impactados:
+  - `package.json` (vite ^5.1.6 → 6.4.2)
+  - `Documentacion/Proyecto-Core/Consigna TP2.md` (nuevo)
+  - `Documentacion/Bitacora/BitacoraIA/Marcelo-IA.md`
+  - GitHub Issues #1 al #9
+- Cambio:
+  - Se resolvieron 2 vulnerabilidades moderadas en esbuild (GHSA-67mh-4wv8-2f99) mediante upgrade de Vite 5.1.6 a 6.4.2. Build verificado (42 módulos, 0 vulnerabilidades). @vitejs/plugin-react mantenido en ^4.x compatible con Vite 6.
+  - Se redactó `Consigna TP2.md` con los 8 requerimientos obligatorios del TP2: Sidebar Dashboard, Dashboard Home, Perfil Profesional, Explorador JSON, API Externa, Galería Lightbox, Bitácora Ampliada y Árbol de Renderizado.
+  - Sesión intensiva de preguntas para definir arquitectura: Sidebar + Navbar coexisten (Opción B), dataset de 20 proyectos del equipo (Opción A), GitHub API para repos/starred (Opción A), Galería integrada con Explorador en misma página.
+  - Se crearon 9 issues en GitHub con tracer-bullet vertical slices, cada uno demoable independientemente, con dependencias claras entre sí. 2 issues marcados HITL (requieren input del equipo).
+  - Issues: #1 Layout Dashboard, #2 Dashboard Home, #3 Perfil Skills+Social, #4 20 Proyectos+Lightbox, #5 GitHub API, #6 Carrusel Perfil, #7 Bitácora Ampliada, #8 Datos Equipo (HITL), #9 README+Deploy (HITL).
+- Impacto:
+  - Proyecto con 0 vulnerabilidades, entorno de desarrollo estable.
+  - Consigna TP2 documentada y accesible para todo el equipo.
+  - Plan de trabajo completo con 9 slices trazados, lista para que cada integrante se auto-asigne issues según afinidad.
+  - Arquitectura definida: Layout con Sidebar desktop + Navbar mobile, datos centralizados en teamData.js y projectsData.js, flujo Git con branches por slice y PRs.
+- Validación manual:
+  - `npm run dev` y `vite build` ejecutados sin errores.
+  - Issues verificados en GitHub: https://github.com/Javiacode/TP-FrontEnd-DesarrolloDeSistemasWeb/issues
