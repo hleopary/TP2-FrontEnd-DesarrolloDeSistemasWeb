@@ -60,6 +60,12 @@ export default function Navbar() {
             >
               Bitácora
             </Link>
+            <Link
+              to="/proyectos"
+              className={`navbar__link ${location.pathname === '/proyectos' ? 'navbar__link--active' : ''}`}
+            >
+              Proyectos
+            </Link>
             <div className="navbar__dropdown">
               <Link
                 to="#"
