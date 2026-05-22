@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
@@ -9,6 +9,8 @@ import { teamData } from './data/teamData'
 import { useEffect } from 'react'
 
 function App() {
+  const { pathname } = useLocation()
+
   // Apply saved theme on mount
   useEffect(() => {
     const saved = localStorage.getItem('theme')
@@ -18,6 +20,11 @@ function App() {
       root.classList.add('dark')
     }
   }, [])
+
+  // Ensure route changes always start at the top of the page.
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [pathname])
 
   return (
     <>
