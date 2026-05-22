@@ -2,7 +2,7 @@
 title: Bitacora IA - Eduardo
 status: activo
 integrante: eduardo
-updated: 2026-05-03
+updated: 2026-05-21
 ---
 
 # Bitacora IA - Eduardo
@@ -13,6 +13,28 @@ Esta bitacora se mantiene en formato changelog.
 Cada entrada representa un cambio puntual realizado con asistencia de IA.
 
 ## Changelog
+
+### [2026-05-21] Seccion de tarjetas dinamicas + fix de redireccion en perfiles
+
+- Tipo: Codigo frontend y UX de navegacion.
+- Modelo: GPT-5.3-Codex.
+- Herramienta: GitHub Copilot Chat.
+- Archivos impactados:
+  - `src/pages/HomePage.jsx`
+  - `src/styles/style.css`
+  - `src/App.jsx`
+- Cambio:
+  - Se agrego una seccion nueva de integrantes en Home sin reemplazar el contenido previo (Hero, Services, Testimonials).
+  - Las tarjetas se renderizan de forma dinamica desde `teamData.js`, mostrando avatar, nombre completo y rol de cada integrante.
+  - Se aplico animacion de entrada escalonada (staggered) con `animation-delay` calculado por indice para mejorar la fluidez visual al cargar.
+  - Se incorporo efecto hover en tarjetas (elevacion, escala sutil y realce visual).
+  - Se corrigio la navegacion a perfiles agregando scroll al inicio en cada cambio de ruta para evitar que abra en la seccion `tech-stack`.
+- Impacto:
+  - Home mantiene su estructura original y suma acceso visual directo a perfiles del equipo.
+  - Experiencia de navegacion mas predecible: cada perfil abre desde la parte superior.
+- Validacion manual:
+  - Se verifico la navegacion por click en tarjetas hacia rutas `/:slug`.
+  - Se ejecuto `npm run build` con resultado exitoso tras los cambios.
 
 ### [2026-05-18] Migración de sitio a React (Vite + SPA)
 
