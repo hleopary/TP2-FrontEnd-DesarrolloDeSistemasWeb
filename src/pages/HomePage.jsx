@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom'
+import { teamData } from '../data/teamData'
+
 export default function HomePage() {
   return (
     <main>
@@ -28,6 +31,48 @@ export default function HomePage() {
               className="hero__image cloud-shadow"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuApJUsFRlGv8cv88NW0N4b0M6_Prz1D4hPZ4M46SiXJNVSvaX4Wn5bqq7gD3HKxkfuonDkLil1YAzkqn_5MPd288W3rmnQnGG_Ltu7BaLjQW73po-F5YsiRoRjzMLbvGXJTAWmE-TwB5z2_hj9MJRmFy9lf97Lcwv8HDspUaxvdtr9HTyicNz8JXTb5UoXRm-FXi5iVyRjBrzh3xrX-f-nzav-zFZS4RfyqS4C7Epk5IPk2VEswW5YNDmM06EzlSCOLSGi44zeReMsd"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Team Cards Section */}
+      <section className="team-section">
+        <div className="team-section__inner">
+          <div className="team-section__header">
+            <h2 className="team-section__title">Integrantes del equipo</h2>
+            <p className="team-section__subtitle">
+              Conoce a cada integrante y accede a su perfil individual.
+            </p>
+          </div>
+
+          <div className="dashboard-grid" aria-label="Tarjetas del equipo">
+            {teamData.map((member, index) => (
+              <Link
+                key={member.slug}
+                to={`/${member.slug}`}
+                className="dashboard-card"
+                style={{ '--card-index': index }}
+                aria-label={`Ver perfil de ${member.firstName} ${member.lastName}`}
+              >
+                <div className="dashboard-card__avatar-wrap">
+                  <img
+                    src={member.image}
+                    alt={`${member.firstName} ${member.lastName}`}
+                    className="dashboard-card__avatar"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="dashboard-card__content">
+                  <h3 className="dashboard-card__name">{member.firstName} {member.lastName}</h3>
+                  <p className="dashboard-card__role">{member.role}</p>
+                </div>
+
+                <span className="dashboard-card__indicator material-symbols-outlined" aria-hidden="true">
+                  arrow_outward
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
