@@ -18,7 +18,6 @@ export default function ProjectsPage() {
   const perPage = view === 'gallery' ? 8 : 10
 
   const [lightboxIndex, setLightboxIndex] = useState(-1)
-  const [zoom, setZoom] = useState(false)
 
   const allItems = projectsData
 
@@ -60,7 +59,6 @@ export default function ProjectsPage() {
   // Lightbox handlers
   const openLightbox = (idx) => {
     setLightboxIndex(idx)
-    setZoom(false)
   }
   const closeLightbox = () => setLightboxIndex(-1)
   const nextLightbox = () => setLightboxIndex((i) => (i + 1) % sorted.length)
@@ -72,7 +70,6 @@ export default function ProjectsPage() {
       if (e.key === 'Escape') closeLightbox()
       if (e.key === 'ArrowRight') nextLightbox()
       if (e.key === 'ArrowLeft') prevLightbox()
-      if (e.key === 'z' || e.key === 'Z') setZoom((z) => !z)
     },
     [lightboxIndex]
   )
@@ -174,18 +171,46 @@ export default function ProjectsPage() {
             </>
           )}
 
-          {/* Lightbox overlay */}
+          {/* Lightbox modal */}
           {lightboxIndex !== -1 && (
             <div className="lightbox" onClick={(e) => { if (e.target.classList.contains('lightbox')) closeLightbox() }}>
-              <div className={`lightbox__inner ${zoom ? 'is-zoomed' : ''}`}>
+              <div className="lightbox__modal">
                 <button className="lightbox__close" onClick={closeLightbox} aria-label="Cerrar">✕</button>
-                <button className="lightbox__nav lightbox__nav--prev" onClick={prevLightbox} aria-label="Anterior">◀</button>
-                <img className="lightbox__img" src={sorted[lightboxIndex].image} alt={sorted[lightboxIndex].title} onDoubleClick={() => setZoom((z) => !z)} />
-                <button className="lightbox__nav lightbox__nav--next" onClick={nextLightbox} aria-label="Siguiente">▶</button>
-                <button className="lightbox__zoom" onClick={() => setZoom((z) => !z)} aria-label="Zoom">{zoom ? '–' : '+'}</button>
-                <div className="lightbox__caption">
-                  <h3>{sorted[lightboxIndex].title}</h3>
-                  <p>{sorted[lightboxIndex].description}</p>
+                
+                <div className="lightbox__content">
+                  <div className="lightbox__image-section">
+                    <img className="lightbox__img" src={sorted[lightboxIndex].image} alt={sorted[lightboxIndex].title} />
+                    <div className="lightbox__nav-buttons">
+                      <button className="lightbox__nav-btn lightbox__nav-btn--prev" onClick={prevLightbox} aria-label="Anterior">◀</button>
+                      <button className="lightbox__nav-btn lightbox__nav-btn--next" onClick={nextLightbox} aria-label="Siguiente">▶</button>
+                    </div>
+                  </div>
+                  
+                  <div className="lightbox__info-section">
+                    <h2 className="lightbox__title">{sorted[lightboxIndex].title}</h2>
+                    
+                    <p className="lightbox__description">{sorted[lightboxIndex].description}</p>
+                    
+                    <div className="lightbox__meta">
+                      <div className="lightbox__meta-item">
+                        <label>Responsable:</label>
+                        <span>{(teamData.find((t) => t.slug === sorted[lightboxIndex].member) || {}).firstName}</span>
+                      </div>
+                      
+                      <div className="lightbox__meta-item">
+                        <label>Tecnologías:</label>
+                        <div className="lightbox__tech-list">
+                          {sorted[lightboxIndex].technologies.map((tech) => (
+                            <span key={tech} className="lightbox__tech-tag">{tech}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <a href={sorted[lightboxIndex].link} target="_blank" rel="noopener noreferrer" className="lightbox__link-btn">
+                      Ver Proyecto
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
