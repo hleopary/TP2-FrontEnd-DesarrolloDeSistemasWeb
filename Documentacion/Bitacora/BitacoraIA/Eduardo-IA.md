@@ -14,6 +14,47 @@ Cada entrada representa un cambio puntual realizado con asistencia de IA.
 
 ## Changelog
 
+### [2026-05-21] Página de Proyectos con galería, tabla, lightbox y dataset completo
+
+- Tipo: Código frontend, dataset y UX.
+- Modelo: Claude Haiku 4.5.
+- Herramienta: GitHub Copilot Chat.
+- Archivos impactados:
+  - `src/data/projectsData.js` (nuevo)
+  - `src/pages/ProjectsPage.jsx` (nuevo)
+  - `src/App.jsx` (ruta agregada)
+  - `src/components/Navbar.jsx` (link agregado)
+  - `src/styles/style.css` (estilos proyectos y lightbox)
+- Cambio:
+  - Se creo dataset de 20 proyectos (5 por integrante: Eduardo, Leandro, Melissa, Marcelo) con tecnologías reales del stack de cada uno.
+  - Se implemento página `/proyectos` con vista dual:
+    - **Tabla**: columnas ordenables (Título, Responsable, Tecnologías), filtrado en tiempo real, paginación.
+    - **Galería**: grid responsivo de thumbnails con metadata, paginación.
+  - Se desarrollo **Lightbox** con:
+    - Navegación con botones ◀ ▶ y teclas de flecha (← →).
+    - Cierre con ESC, click fuera o botón ✕.
+    - Zoom toggle (botón + o doble click en imagen), con tecla Z como atajo.
+    - Caption dinámico con título y descripción.
+    - Animaciones suaves (fade-in, zoom-in) y glass-morphism en controles.
+  - Se agrgo **buscador** que filtra por título, descripción, tecnologías y miembro en tiempo real.
+  - Se implemento **toggle Tabla/Galería** con persistencia visual.
+  - Se aplicaron **estilos avanzados**:
+    - Responsive grid (1 col mobile, 2 >= 768px, 3+ >= 1024px).
+    - Animaciones hover (elevación, escala, transform).
+    - Tokens de color y variables CSS reutilizables.
+    - Tabla con bordes nítidos, background alterno, hover effects.
+  - Se corrigieron **imágenes duplicadas y rotas**, asignando URLs únicas y válidas de Unsplash.
+- Impacto:
+  - Nueva sección principal del sitio para exploración de proyectos con UX fluida.
+  - Mejor presentación del trabajo del equipo técnico con categorización por miembro.
+  - Funcionalidades avanzadas (lightbox, zoom, keyboard shortcuts) mejoran interactividad.
+- Validacion manual:
+  - `npm run build` ejecutado con éxito.
+  - Navegación tabla ↔ galería funciona sin errores.
+  - Buscador filtra correctamente en tiempo real.
+  - Lightbox responde a clicks, ESC, flechas del teclado y zoom toggle.
+  - Todas las imágenes cargan correctamente sin duplicados.
+
 ### [2026-05-21] Seccion de tarjetas dinamicas + fix de redireccion en perfiles
 
 - Tipo: Codigo frontend y UX de navegacion.
