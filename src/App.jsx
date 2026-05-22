@@ -5,6 +5,7 @@ import BackToTop from './components/BackToTop'
 import HomePage from './pages/HomePage'
 import BitacoraPage from './pages/BitacoraPage'
 import ProfilePage from './pages/ProfilePage'
+import ProjectsPage from './pages/ProjectsPage'
 import { teamData } from './data/teamData'
 import { useEffect } from 'react'
 
@@ -39,6 +40,7 @@ function App() {
             element={<ProfilePage member={member} />}
           />
         ))}
+        <Route path="/proyectos" element={<ProjectsPage />} />
       </Routes>
       <Footer />
       <BackToTop />
