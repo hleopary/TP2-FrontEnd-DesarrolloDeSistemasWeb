@@ -139,6 +139,9 @@ export default function Navbar() {
           <Link to="/bitacora" className="navbar__link" onClick={closeMenu}>
             Bitácora
           </Link>
+          <Link to="/proyectos" className="navbar__link" onClick={closeMenu}>
+            Proyectos
+          </Link>
           <ul className="navbar__team-list">
             {teamData.map((member) => (
               <li key={member.slug}>
