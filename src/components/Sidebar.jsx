@@ -62,6 +62,14 @@ export default function Sidebar() {
             Proyectos
           </Link>
 
+          <Link
+            to="/github"
+            className={`sidebar__link ${location.pathname === '/github' ? 'sidebar__link--active' : ''}`}
+          >
+            <span className="material-symbols-outlined sidebar__link-icon">code</span>
+            GitHub
+          </Link>
+
           {/* Team submenu — click to expand/collapse */}
           <button
             className={`sidebar__link sidebar__team-toggle ${isTeamActive ? 'sidebar__link--active' : ''}`}
