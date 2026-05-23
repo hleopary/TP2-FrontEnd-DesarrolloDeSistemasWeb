@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { teamData } from '../data/teamData'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDark, setIsDark] = useState(false)
-  const location = useLocation()
 
   useEffect(() => {
     setIsDark(document.documentElement.classList.contains('dark'))
@@ -45,59 +44,7 @@ export default function Navbar() {
       <nav className="navbar">
         <div className="navbar__inner">
           <div className="navbar__brand">Grupo Clouds</div>
-          <div className="navbar__links">
-            <Link
-              to="/"
-              className={`navbar__link ${location.pathname === '/' ? 'navbar__link--active' : ''}`}
-            >
-              Principal
-            </Link>
-            <Link
-              to="/bitacora"
-              className={`navbar__link ${
-                location.pathname === '/bitacora' ? 'navbar__link--active' : ''
-              }`}
-            >
-              Bitácora
-            </Link>
-            <Link
-              to="/proyectos"
-              className={`navbar__link ${location.pathname === '/proyectos' ? 'navbar__link--active' : ''}`}
-            >
-              Proyectos
-            </Link>
-            <div className="navbar__dropdown">
-              <Link
-                to="#"
-                className={`navbar__link navbar__dropdown-toggle ${
-                  teamData.some((m) => location.pathname === `/${m.slug}`)
-                    ? 'navbar__link--active'
-                    : ''
-                }`}
-              >
-                Team
-                <span className="material-symbols-outlined navbar__dropdown-icon">
-                  expand_more
-                </span>
-              </Link>
-              <div className="navbar__dropdown-menu">
-                {teamData.map((member) => (
-                  <Link
-                    key={member.slug}
-                    to={`/${member.slug}`}
-                    className={`navbar__dropdown-item ${
-                      location.pathname === `/${member.slug}`
-                        ? 'navbar__dropdown-item--active'
-                        : ''
-                    }`}
-                  >
-                    {member.firstName}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="navbar__cta-wrapper">
+          <div className="navbar__actions">
             <button
               className="theme-toggle"
               onClick={toggleTheme}
@@ -110,16 +57,16 @@ export default function Navbar() {
                 dark_mode
               </span>
             </button>
+            <button
+              className={`navbar__menu-toggle ${isMenuOpen ? 'navbar__menu-toggle--open' : ''}`}
+              onClick={toggleMenu}
+              aria-expanded={isMenuOpen}
+            >
+              <span className="material-symbols-outlined">
+                {isMenuOpen ? 'close' : 'menu'}
+              </span>
+            </button>
           </div>
-          <button
-            className={`navbar__menu-toggle ${isMenuOpen ? 'navbar__menu-toggle--open' : ''}`}
-            onClick={toggleMenu}
-            aria-expanded={isMenuOpen}
-          >
-            <span className="material-symbols-outlined">
-              {isMenuOpen ? 'close' : 'menu'}
-            </span>
-          </button>
         </div>
       </nav>
 
