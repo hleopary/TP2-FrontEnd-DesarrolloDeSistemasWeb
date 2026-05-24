@@ -117,3 +117,48 @@ Cada entrada representa un cambio puntual realizado con asistencia de IA.
 - Validación manual:
   - `npm run dev` y `vite build` ejecutados sin errores.
   - Issues verificados en GitHub: https://github.com/Javiacode/TP-FrontEnd-DesarrolloDeSistemasWeb/issues
+
+### [2026-05-23] Implementación Slice 0 — Layout con Sidebar glassmorphism
+
+- Tipo: Desarrollo Frontend / Arquitectura.
+- Modelo: DeepSeek V4 Pro (OpenCode).
+- Herramienta: Agente SDD (sdd-apply).
+- Archivos impactados:
+  - `src/components/Sidebar.jsx` (nuevo)
+  - `src/App.jsx`
+  - `src/styles/style.css`
+- Cambio:
+  - Issue #1 — Layout Dashboard: creado componente Sidebar con navegación desktop usando glassmorphism idéntico al Navbar existente (`backdrop-filter: blur(24px)`, `rgba(255,255,255,0.7)`).
+  - Sidebar contiene: brand "Grupo Clouds", links con íconos Material Symbols (Principal, Bitácora, Proyectos), submenú Team expandible por click con los 4 integrantes, y theme toggle (light/dark).
+  - Submenú Team se auto-expande si el usuario navega al perfil de un miembro.
+  - En desktop (≥768px): Sidebar fijo a la izquierda (260px, `z-index: 40`), Navbar completamente oculto (`display: none`), contenido con `margin-left: 260px` para no solaparse.
+  - En mobile (<768px): Sidebar oculto, Navbar con hamburger slideout — comportamiento intacto, sin cambios en la lógica mobile.
+  - App.jsx refactorizado con wrapper `.app-layout` flex: Sidebar + `.app-layout__content` (Navbar + Routes + Footer + BackToTop).
+  - Dark mode completo para el Sidebar (`rgba(19,19,19,0.8)`, borde derecho sutil, links dorados).
+  - Decisión: Navbar se oculta completamente en desktop — Sidebar absorbe toda la navegación. No se mantiene barra híbrida para evitar duplicación visual.
+- Impacto:
+  - Se completa el Slice 0 (Issue #1), desbloqueando la estructura base de la app. Los slices subsiguientes (#3, #5, #6, #7, #8, #9) ahora tienen un shell de layout definido donde renderizar.
+  - Arquitectura responsive finalmente implementada según la decisión original: Sidebar desktop + Navbar mobile.
+  - Los slices ya mergeados (#2 Dashboard, #4 Proyectos) se integran automáticamente dentro del layout sin necesidad de refactor.
+- Validación manual:
+   - Usuario verificó visualmente con `npm run dev` en viewports desktop y mobile. Sidebar visible en ≥768px, Navbar hamburger funcional en <768px.
+
+### [2026-05-23] Refactor Navbar a mobile-only + fix dark mode slideout y BackToTop
+
+- Tipo: Refactorización / Bugfix UI.
+- Modelo: DeepSeek V4 Pro (OpenCode).
+- Herramienta: Agente SDD (sdd-apply).
+- Archivos impactados:
+  - `src/components/Navbar.jsx`
+  - `src/components/BackToTop.jsx`
+  - `src/styles/style.css`
+- Cambio:
+  - **Refactor Navbar**: eliminado todo el código muerto de navegación desktop (`.navbar__links` con links horizontales, dropdown Team con hover, `.navbar__cta-wrapper`). El Navbar ahora es puramente mobile: barra superior con brand + theme toggle + hamburguesa, overlay y slideout. Se removió `useLocation` y lógica de links activos. -80 líneas de código muerto (JSX + CSS).
+  - **Fix Proyectos en slideout mobile**: Eduardo agregó "Proyectos" al Navbar desktop pero lo omitió en el slideout mobile. Agregado link faltante.
+  - **Fix dark mode slideout**: el panel slideout mobile tenía fondo blanco hardcodeado (`rgba(255,255,255,0.85)`) que no cambiaba en dark mode. Agregadas reglas `.dark .navbar__slideout` con glassmorphism oscuro (`rgba(19,19,19,0.85)`) y links en `var(--on-surface-variant)` con hover `var(--primary)`.
+  - **Fix BackToTop dark mode**: el botón usaba `var(--primary)` como fondo, que en dark mode es `#ffeebb` (crema) con flecha `white` → ilegible. Cambiado a `var(--surface-container-high)` para fondo (`#2a2a2a` en dark) y `var(--primary)` para la flecha (`#ffeebb` en dark), mismo patrón que el theme-toggle.
+- Impacto:
+  - Navbar enfocado en su única responsabilidad (mobile), sin código que confunda.
+  - Slideout mobile ahora legible en dark mode. BackToTop visible en ambos temas.
+- Validación manual:
+  - Usuario verificó visualmente con `npm run dev`: slideout mobile oscuro en dark mode, BackToTop con contraste adecuado en ambos temas.

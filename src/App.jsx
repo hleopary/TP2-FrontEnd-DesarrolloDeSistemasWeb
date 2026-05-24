@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import HomePage from './pages/HomePage'
@@ -28,23 +29,26 @@ function App() {
   }, [pathname])
 
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/bitacora" element={<BitacoraPage />} />
-        {teamData.map((member) => (
-          <Route
-            key={member.slug}
-            path={`/${member.slug}`}
-            element={<ProfilePage member={member} />}
-          />
-        ))}
-        <Route path="/proyectos" element={<ProjectsPage />} />
-      </Routes>
-      <Footer />
-      <BackToTop />
-    </>
+    <div className="app-layout">
+      <Sidebar />
+      <div className="app-layout__content">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/bitacora" element={<BitacoraPage />} />
+          {teamData.map((member) => (
+            <Route
+              key={member.slug}
+              path={`/${member.slug}`}
+              element={<ProfilePage member={member} />}
+            />
+          ))}
+          <Route path="/proyectos" element={<ProjectsPage />} />
+        </Routes>
+        <Footer />
+        <BackToTop />
+      </div>
+    </div>
   )
 }
 
