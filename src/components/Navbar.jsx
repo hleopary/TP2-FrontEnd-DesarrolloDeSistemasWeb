@@ -89,6 +89,9 @@ export default function Navbar() {
           <Link to="/proyectos" className="navbar__link" onClick={closeMenu}>
             Proyectos
           </Link>
+          <Link to="/github" className="navbar__link" onClick={closeMenu}>
+            GitHub
+          </Link>
           <ul className="navbar__team-list">
             {teamData.map((member) => (
               <li key={member.slug}>
