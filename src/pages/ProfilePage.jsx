@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import TechStack from '../components/TechStack'
 import MovieCarousel from '../components/MovieCarousel'
 import MusicGrid from '../components/MusicGrid'
+import SkillBars from '../components/SkillBars'
+import SocialLinks from '../components/SocialLinks'
 
 export default function ProfilePage({ member }) {
   return (
@@ -39,6 +41,8 @@ export default function ProfilePage({ member }) {
             </div>
 
             <p className="profile-hero__role-detail">{member.description}</p>
+            
+            <SocialLinks social={member.social} />
 
             <div className="profile-hero__actions">
               <Link to="/bitacora" className="profile-hero__cta-primary">
@@ -86,6 +90,7 @@ export default function ProfilePage({ member }) {
       </section>
 
       <TechStack stack={member.techStack} />
+      <SkillBars stack={member.techStack} />
 
       <section className="interests">
         <div className="interests__inner">
