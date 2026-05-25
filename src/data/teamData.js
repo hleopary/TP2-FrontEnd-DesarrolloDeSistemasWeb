@@ -11,7 +11,7 @@ export const teamData = [
     description: 'Soy desarrollador con experiencia en Back-End y enfocado en integrar soluciones con Inteligencia Artificial.',
     image: 'https://avatars.githubusercontent.com/u/126937215?v=4',
     social: {
-      github: 'https://github.com/EduardoMoreno',
+      github: 'https://github.com/EduMMorenolp',
       linkedin: 'https://linkedin.com/in/eduardomoreno'
     },
     techStack: [
@@ -78,8 +78,8 @@ export const teamData = [
     description: 'Soy un entusiasta de la tecnología experiencia con servidores, electronica, mecánica, lógistica y ...redoble de tambores "Software".',
     image: 'https://avatars.githubusercontent.com/u/167145451?v=4',
     social: {
-      github: 'https://github.com/lparyszewski',
-      linkedin: 'https://linkedin.com/in/lparyszewski'
+      github: 'https://github.com/hleopary',
+      //linkedin: 'https://linkedin.com/in/lparyszewski'
     },
     techStack: [
       { id: 'c', name: 'C', level: 85 },
@@ -145,7 +145,7 @@ export const teamData = [
     description: 'Apasionada por el análisis y validación de sistemas, con especial interés en testing y mejora continua.',
     image: 'https://avatars.githubusercontent.com/u/95649292?v=4',
     social: {
-      github: 'https://github.com/Melissagaleano'
+      github: 'https://github.com/MMolly-ibanez'
     },
     techStack: [
       { id: 'html', name: 'HTML', level: 92 },
@@ -206,7 +206,7 @@ export const teamData = [
     description: 'Soy un desarollador entusiasta de la Inteligencia Artificial y Atleta de Streetlifting',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAKV-JJu4hJv6q7cuHbqADHu2kxOoiVw43rI3oZk8a4omdJd6g2upNAu2ppLs7MuIjBn0B3qT8sAy_353poG368kLRuyNaKUwtLt7LClxAIFBt0OTw3A7mspCcwxPKIUX-FXiwk91oxAmYgKKEnFcVpyVMFAFtzrqSNL1rpaJxJUd42Bq2dSvM2sMGTGNVgWbGM6s3LPCfw-U4wkW2LD78-3Awy5UCLSu8CgKD16fD3-_Ug0OJLdXzIkS_W80wStOa5soBQpPRPgNdf',
     social: {
-      github: 'https://github.com/MarceloMoreno',
+      github: 'https://github.com/Javiacode',
       linkedin: 'https://linkedin.com/in/marcelomoreno'
     },
     techStack: [
