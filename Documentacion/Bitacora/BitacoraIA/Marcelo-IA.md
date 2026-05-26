@@ -162,3 +162,33 @@ Cada entrada representa un cambio puntual realizado con asistencia de IA.
   - Slideout mobile ahora legible en dark mode. BackToTop visible en ambos temas.
 - Validación manual:
   - Usuario verificó visualmente con `npm run dev`: slideout mobile oscuro en dark mode, BackToTop con contraste adecuado en ambos temas.
+
+### [2026-05-23] Implementación Slice 5 — GitHub API Explorer
+
+- Tipo: Desarrollo Frontend / Integración API.
+- Modelo: DeepSeek V4 Pro (OpenCode).
+- Herramienta: Agente SDD (sdd-apply).
+- Archivos impactados:
+  - `src/pages/GitHubPage.jsx` (nuevo)
+  - `src/data/teamData.js`
+  - `src/components/Sidebar.jsx`
+  - `src/components/Navbar.jsx`
+  - `src/App.jsx`
+  - `src/styles/style.css`
+- Cambio:
+  - Issue #5 — GitHub API Explorer: página `/github` que consume la API pública de GitHub sin token.
+  - Selector de miembro para elegir entre los 4 integrantes y ver sus repos/starred.
+  - Tabs "Repositorios" y "Starred" con estilo pill glassmorphism.
+  - Fetch asíncrono con estados: loading (spinner CSS), error (con botón Reintentar), empty (mensaje informativo), 403 rate limit ("Límite de API alcanzado").
+  - Paginación con parseo del header `Link` de GitHub para detectar total de páginas.
+  - Cards de repo: nombre, descripción, lenguaje con dot de color (mapa de 27 lenguajes), ⭐, link a GitHub.
+  - Cards de starred: nombre, descripción, owner, ⭐, link a GitHub.
+  - Agregado link `/github` al Sidebar (escritorio) y al slideout del Navbar (mobile).
+  - Se agregó campo `social.github` a `teamData.js` con los 4 usernames: EduMMorenolp, hleopary, Molly-ibanez, Javiacode. Esto desbloquea también el Slice 2 (Perfil Skills+Social) para que el compañero lo complete.
+  - Dark mode completo para todos los nuevos componentes.
+- Impacto:
+  - Nueva página funcional con datos reales de GitHub de cada integrante, demoable de forma independiente.
+  - Slice 2 parcialmente desbloqueado al tener `social.github` en teamData.
+- Validación manual:
+  - Usuario verificó visualmente con `npm run dev`: fetch exitoso de repos y starred de miembros reales, paginación funcional, tabs switchean correctamente. Bug visual menor detectado en mobile (navbar tapa el título) — pendiente de fix.
+- Branch: `slice/5-github-api`

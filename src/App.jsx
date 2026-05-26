@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 import BitacoraPage from './pages/BitacoraPage'
 import ProfilePage from './pages/ProfilePage'
 import ProjectsPage from './pages/ProjectsPage'
+import GitHubPage from './pages/GitHubPage'
 import { teamData } from './data/teamData'
 import { useEffect } from 'react'
 
@@ -44,6 +45,7 @@ function App() {
             />
           ))}
           <Route path="/proyectos" element={<ProjectsPage />} />
+          <Route path="/github" element={<GitHubPage />} />
         </Routes>
         <Footer />
         <BackToTop />
