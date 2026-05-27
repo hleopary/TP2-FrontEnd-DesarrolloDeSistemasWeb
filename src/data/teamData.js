@@ -11,19 +11,23 @@ export const teamData = [
     interest: 'Fuerte interes en Inteligencia Artificial',
     description: 'Soy desarrollador con experiencia en Back-End y enfocado en integrar soluciones con Inteligencia Artificial.',
     image: 'https://avatars.githubusercontent.com/u/126937215?v=4',
+    social: {
+      github: 'https://github.com/EduMMorenolp',
+      linkedin: 'https://linkedin.com/in/eduardomoreno'
+    },
     techStack: [
-      { id: 'html', name: 'HTML' },
-      { id: 'css', name: 'CSS' },
-      { id: 'javascript', name: 'JavaScript' },
-      { id: 'nodejs', name: 'Node.js' },
-      { id: 'git', name: 'Git / GitHub' },
-      { id: 'sqlite', name: 'SQLite' },
-      { id: 'vite', name: 'Vite' },
-      { id: 'react', name: 'React' },
-      { id: 'mysql', name: 'MySQL' },
-      { id: 'prisma', name: 'Prisma' },
-      { id: 'docker', name: 'Docker' },
-      { id: 'ai', name: 'Inteligencia Artificial' }
+      { id: 'html', name: 'HTML', level: 90 },
+      { id: 'css', name: 'CSS', level: 85 },
+      { id: 'javascript', name: 'JavaScript', level: 88 },
+      { id: 'nodejs', name: 'Node.js', level: 92 },
+      { id: 'git', name: 'Git / GitHub', level: 80 },
+      { id: 'sqlite', name: 'SQLite', level: 85 },
+      { id: 'vite', name: 'Vite', level: 75 },
+      { id: 'react', name: 'React', level: 82 },
+      { id: 'mysql', name: 'MySQL', level: 88 },
+      { id: 'prisma', name: 'Prisma', level: 80 },
+      { id: 'docker', name: 'Docker', level: 78 },
+      { id: 'ai', name: 'Inteligencia Artificial', level: 85 }
     ],
     movies: [
       {
@@ -75,19 +79,23 @@ export const teamData = [
     interest: 'Open Source Technology Fan',
     description: 'Soy un entusiasta de la tecnología experiencia con servidores, electronica, mecánica, lógistica y ...redoble de tambores "Software".',
     image: 'https://avatars.githubusercontent.com/u/167145451?v=4',
+    social: {
+      github: 'https://github.com/hleopary',
+      //linkedin: 'https://linkedin.com/in/lparyszewski'
+    },
     techStack: [
-      { id: 'c', name: 'C' },
-      { id: 'cpp', name: 'C++' },
-      { id: 'asm', name: 'ASM' },
-      { id: 'linux', name: 'Linux / GNU' },
-      { id: 'ssh', name: 'SSH' },
-      { id: 'docker', name: 'Docker' },
-      { id: 'kubernetes', name: 'Kubernetes' },
-      { id: 'bash', name: 'Bash / Shell' },
-      { id: 'embedded', name: 'Embedded / IoT' },
-      { id: 'javascript', name: 'JavaScript' },
-      { id: 'git', name: 'Git / GitHub' },
-      { id: 'webcore', name: 'Web Core' }
+      { id: 'c', name: 'C', level: 85 },
+      { id: 'cpp', name: 'C++', level: 80 },
+      { id: 'asm', name: 'ASM', level: 75 },
+      { id: 'linux', name: 'Linux / GNU', level: 95 },
+      { id: 'ssh', name: 'SSH', level: 90 },
+      { id: 'docker', name: 'Docker', level: 88 },
+      { id: 'kubernetes', name: 'Kubernetes', level: 82 },
+      { id: 'bash', name: 'Bash / Shell', level: 92 },
+      { id: 'embedded', name: 'Embedded / IoT', level: 85 },
+      { id: 'javascript', name: 'JavaScript', level: 80 },
+      { id: 'git', name: 'Git / GitHub', level: 88 },
+      { id: 'webcore', name: 'Web Core', level: 78 }
     ],
     movies: [
       {
@@ -139,14 +147,17 @@ export const teamData = [
     interest: 'Interés en aseguramiento de calidad de Software',
     description: 'Apasionada por el análisis y validación de sistemas, con especial interés en testing y mejora continua.',
     image: 'https://avatars.githubusercontent.com/u/95649292?v=4',
+    social: {
+      github: 'https://github.com/MMolly-ibanez'
+    },
     techStack: [
-      { id: 'html', name: 'HTML' },
-      { id: 'css', name: 'CSS' },
-      { id: 'git', name: 'Git / GitHub' },
-      { id: 'javascript', name: 'JavaScript' },
-      { id: 'csharp', name: 'C#' },
-      { id: 'kotlin', name: 'Kotlin' },
-      { id: 'mysql', name: 'MySQL' }
+      { id: 'html', name: 'HTML', level: 92 },
+      { id: 'css', name: 'CSS', level: 88 },
+      { id: 'git', name: 'Git / GitHub', level: 85 },
+      { id: 'javascript', name: 'JavaScript', level: 85 },
+      { id: 'csharp', name: 'C#', level: 80 },
+      { id: 'kotlin', name: 'Kotlin', level: 75 },
+      { id: 'mysql', name: 'MySQL', level: 82 }
     ],
     movies: [
       {
@@ -198,15 +209,19 @@ export const teamData = [
     interest: 'Freelancer',
     description: 'Soy un desarollador entusiasta de la Inteligencia Artificial y Atleta de Streetlifting',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAKV-JJu4hJv6q7cuHbqADHu2kxOoiVw43rI3oZk8a4omdJd6g2upNAu2ppLs7MuIjBn0B3qT8sAy_353poG368kLRuyNaKUwtLt7LClxAIFBt0OTw3A7mspCcwxPKIUX-FXiwk91oxAmYgKKEnFcVpyVMFAFtzrqSNL1rpaJxJUd42Bq2dSvM2sMGTGNVgWbGM6s3LPCfw-U4wkW2LD78-3Awy5UCLSu8CgKD16fD3-_Ug0OJLdXzIkS_W80wStOa5soBQpPRPgNdf',
+    social: {
+      github: 'https://github.com/Javiacode',
+      linkedin: 'https://linkedin.com/in/marcelomoreno'
+    },
     techStack: [
-      { id: 'html', name: 'HTML' },
-      { id: 'css', name: 'CSS' },
-      { id: 'git', name: 'Git / GitHub' },
-      { id: 'javascript', name: 'JavaScript' },
-      { id: 'typescript', name: 'TypeScript' },
-      { id: 'csharp', name: 'C#' },
-      { id: 'kotlin', name: 'Kotlin' },
-      { id: 'sql', name: 'Bases de datos SQL' }
+      { id: 'html', name: 'HTML', level: 95 },
+      { id: 'css', name: 'CSS', level: 90 },
+      { id: 'git', name: 'Git / GitHub', level: 85 },
+      { id: 'javascript', name: 'JavaScript', level: 88 },
+      { id: 'typescript', name: 'TypeScript', level: 85 },
+      { id: 'csharp', name: 'C#', level: 80 },
+      { id: 'kotlin', name: 'Kotlin', level: 75 },
+      { id: 'sql', name: 'Bases de datos SQL', level: 82 }
     ],
     movies: [
       {
