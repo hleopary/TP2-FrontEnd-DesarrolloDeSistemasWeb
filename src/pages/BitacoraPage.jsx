@@ -197,14 +197,14 @@ export default function BitacoraPage() {
             <article className="bitacora-stat">
               <span className="material-symbols-outlined bitacora-stat__icon">auto_awesome</span>
               <div>
-                <p className="bitacora-stat__value">13+</p>
+                <p className="bitacora-stat__value">22+</p>
                 <p className="bitacora-stat__label">cambios IA</p>
               </div>
             </article>
             <article className="bitacora-stat">
               <span className="material-symbols-outlined bitacora-stat__icon">event_note</span>
               <div>
-                <p className="bitacora-stat__value">3</p>
+                <p className="bitacora-stat__value">5</p>
                 <p className="bitacora-stat__label">minutas clave</p>
               </div>
             </article>
@@ -227,19 +227,20 @@ export default function BitacoraPage() {
               </div>
               <ul className="bitacora-card__list">
                 <li>
-                  <strong>2026-05-18:</strong> Migración completa del sitio a React (Vite + SPA), refactorización del estado (Hooks) y componentización de la UI con asistencia de IA.
+                  <strong>2026-05-21:</strong> Página de Proyectos con dataset de 20 proyectos,
+                  galería, lightbox con zoom y atajos de teclado.
                 </li>
                 <li>
-                  <strong>2026-04-20:</strong> Ajuste integral del perfil y stack con foco Back-End
-                  + IA.
+                  <strong>2026-05-21:</strong> Sección de tarjetas dinámicas en Home + fix de
+                  scroll en perfiles.
                 </li>
                 <li>
-                  <strong>2026-04-16:</strong> Estandarizacion de consigna, arquitectura y
-                  estructura de documentacion.
+                  <strong>2026-05-18:</strong> Migración completa del sitio a React (Vite + SPA),
+                  refactorización del estado (Hooks) y SPA routing.
                 </li>
                 <li>
-                  <strong>2026-04-16:</strong> Implementacion base del frontend y renombre global a{' '}
-                  <strong>style.css</strong> y <strong>main.js</strong>.
+                  <strong>2026-05-03:</strong> Corrección del menú hamburguesa y refactor de JS
+                  para evitar scripts duplicados.
                 </li>
               </ul>
             </article>
@@ -251,16 +252,16 @@ export default function BitacoraPage() {
               </div>
               <ul className="bitacora-card__list">
                 <li>
-                  <strong>2026-04-18:</strong> Armado de estructura inicial del perfil personal y
-                  definicion del stack tecnico visible.
+                  <strong>2026-05-25:</strong> Implementación de SkillBars (IntersectionObserver) y
+                  SocialLinks (GitHub + LinkedIn) en ProfilePage.
                 </li>
                 <li>
-                  <strong>2026-04-19:</strong> Curado de contenidos de peliculas y discos para la
-                  seccion Off the Grid.
+                  <strong>2026-05-03:</strong> Debugging manual del menú hamburguesa y corrección
+                  de enlaces de trailers y embeds de Spotify.
                 </li>
                 <li>
                   <strong>2026-04-20:</strong> Ajustes de accesibilidad y revisiones responsive en
-                  navegacion y tarjetas de intereses.
+                  navegación y tarjetas de intereses.
                 </li>
               </ul>
             </article>
@@ -272,16 +273,20 @@ export default function BitacoraPage() {
               </div>
               <ul className="bitacora-card__list">
                 <li>
-                  <strong>2026-04-17:</strong> Prototipos visuales y reglas de diseno en{' '}
-                  <strong>DESIGN.md</strong>.
+                  <strong>2026-05-26:</strong> Slice 6a — Bitácora Ampliada con Flujo de Trabajo,
+                  Migración, Roles y Árbol de Renderizado.
                 </li>
                 <li>
-                  <strong>2026-04-19:</strong> Refactor a CSS modular, menu Team y modo oscuro
-                  persistente.
+                  <strong>2026-05-26:</strong> Fix bug GitHub API: social key duplicada en
+                  teamData.js + typo MMolly-ibanez.
                 </li>
                 <li>
-                  <strong>2026-04-19:</strong> Creacion de su perfil completo con carrusel estilo
-                  streaming y embeds de Spotify.
+                  <strong>2026-05-23:</strong> Slice 5 — GitHub API Explorer + Slice 0 — Layout
+                  Sidebar + Refactor Navbar mobile-only.
+                </li>
+                <li>
+                  <strong>2026-05-21:</strong> Planificación TP2: 9 issues trazados como
+                  tracer-bullet slices, arquitectura y convenciones.
                 </li>
               </ul>
             </article>
@@ -293,16 +298,20 @@ export default function BitacoraPage() {
               </div>
               <ul className="bitacora-card__list">
                 <li>
-                  <strong>2026-04-18:</strong> Definicion de texto de perfil con enfoque en testing
-                  y aseguramiento de calidad.
+                  <strong>2026-05-26:</strong> Asignado Slice 4 — Carrusel de Proyectos en Perfil
+                  (Issue #6).
                 </li>
                 <li>
-                  <strong>2026-04-19:</strong> Integracion de catalogo multimedia para la seccion de
+                  <strong>2026-05-21:</strong> Actualización de datos personales en teamData.js
+                  (stack, películas, discos).
+                </li>
+                <li>
+                  <strong>2026-04-19:</strong> Integración de catálogo multimedia para la sección de
                   intereses personales.
                 </li>
                 <li>
-                  <strong>2026-04-20:</strong> Validacion manual del flujo de navegacion y ajustes
-                  de consistencia visual en mobile.
+                  <strong>2026-04-18:</strong> Definición de perfil con enfoque en testing y
+                  aseguramiento de calidad.
                 </li>
               </ul>
             </article>
@@ -320,6 +329,43 @@ export default function BitacoraPage() {
           </div>
 
           <div className="minutas-list">
+            <article className="minuta-item">
+              <div className="minuta-item__date">2026-05-26</div>
+              <div className="minuta-item__body">
+                <h3>Revisión de avances y planificación de cierre</h3>
+                <p>
+                  Cada integrante compartió el estado de sus issues. Se identificaron mejoras
+                  pendientes y se definió el plan para finalizar el TP2.
+                </p>
+                <ul>
+                  <li><strong>Eduardo:</strong> Completados Slice 0 (Layout), Slice 1 (Dashboard Home), Slice 3 (20 Proyectos + Lightbox).</li>
+                  <li><strong>Leandro:</strong> Completado Slice 2 (Perfil Profesional — SkillBars + SocialLinks).</li>
+                  <li><strong>Marcelo:</strong> Completados Slice 5 (GitHub API Explorer), Slice 6a (Bitácora Ampliada). Fix de bug en GitHubPage.</li>
+                  <li><strong>Melisa:</strong> Trabajando en Slice 4 (Carrusel de Proyectos en Perfil, Issue #6).</li>
+                  <li>Pendientes: Slice 6b (HITL — GitFlow real y roles), Slice 7 (HITL — README + Deploy Vercel).</li>
+                  <li>Mejoras responsive mobile identificadas: navbar tapa títulos, slideout en dark mode, BackToTop contraste.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article className="minuta-item">
+              <div className="minuta-item__date">2026-05-21</div>
+              <div className="minuta-item__body">
+                <h3>Definición del formato de trabajo para el TP2</h3>
+                <p>
+                  Se estableció la metodología de trabajo con GitHub Issues, branches por slice y
+                  auto-asignación según afinidad.
+                </p>
+                <ul>
+                  <li>El proyecto se dividió en <strong>9 issues</strong> trazados como tracer-bullet vertical slices.</li>
+                  <li>Cada integrante elige el slice que prefiere según su perfil técnico.</li>
+                  <li>Ramas con prefijo <code>slice/N-descripcion</code>, una por issue.</li>
+                  <li>PR obligatorio con al menos 1 review de otro compañero antes del merge.</li>
+                  <li>Commits convencionales (<code>feat:</code>, <code>fix:</code>, <code>refactor:</code>).</li>
+                </ul>
+              </div>
+            </article>
+
             <article className="minuta-item">
               <div className="minuta-item__date">2026-05-18</div>
               <div className="minuta-item__body">
