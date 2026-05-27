@@ -192,3 +192,22 @@ Cada entrada representa un cambio puntual realizado con asistencia de IA.
 - Validación manual:
   - Usuario verificó visualmente con `npm run dev`: fetch exitoso de repos y starred de miembros reales, paginación funcional, tabs switchean correctamente. Bug visual menor detectado en mobile (navbar tapa el título) — pendiente de fix.
 - Branch: `slice/5-github-api`
+
+### [2026-05-26] Fix GitHubPage — Error de API por social key duplicada en teamData.js
+
+- Tipo: Bugfix / Corrección de datos.
+- Modelo: DeepSeek V4 Pro (OpenCode).
+- Herramienta: OpenCode Agent.
+- Archivos impactados:
+  - `src/data/teamData.js`
+  - `src/pages/GitHubPage.jsx`
+- Cambio:
+  - **Causa raíz**: Cada miembro en `teamData.js` tenía la propiedad `social` definida DOS VECES. La primera con solo el username (`{ github: "EduMMorenolp" }`) y la segunda con URL completa (`{ github: "https://github.com/EduMMorenolp", linkedin: "..." }`). En JS la última definición pisa a la primera, por lo que `member.social.github` devolvía `"https://github.com/EduMMorenolp"` en vez de `"EduMMorenolp"`.
+  - El `GitHubPage.jsx` usaba `member.social.github` en las URLs de la API REST: `https://api.github.com/users/${member.social.github}/repos`. Al ser una URL completa, la llamada resultaba en `https://api.github.com/users/https://github.com/EduMMorenolp/repos` → URL inválida, error 404.
+  - **Fix**: Se eliminó la primera definición de `social` de los 4 miembros (Eduardo, Leandro, Melissa, Marcelo). Se agregó campo `githubUser` al objeto `social` definitivo con solo el username. `GitHubPage.jsx` ahora usa `member.social.githubUser` para las llamadas a la API, mientras que `SocialLinks.jsx` sigue usando `member.social.github` (URL completa) para el href.
+  - Se corrigió typo en Melissa: `MMolly-ibanez` → `Molly-ibanez` (URL de GitHub y username).
+- Impacto:
+  - GitHub API Explorer vuelve a funcionar correctamente para todos los miembros.
+  - Separación clara de responsabilidades: `social.github` = URL para links externos, `social.githubUser` = username para API calls.
+- Validación manual:
+  - Pendiente — usuario debe verificar con `npm run dev`.

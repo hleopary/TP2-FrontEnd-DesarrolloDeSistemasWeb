@@ -49,7 +49,7 @@ export default function GitHubPage() {
   const member = teamData.find((m) => m.slug === selectedSlug)
 
   const fetchData = useCallback(async () => {
-    if (!member?.social?.github) return
+    if (!member?.social?.githubUser) return
 
     setLoading(true)
     setError(null)
@@ -57,8 +57,8 @@ export default function GitHubPage() {
 
     const endpoint =
       activeTab === 'repos'
-        ? `https://api.github.com/users/${member.social.github}/repos?per_page=${PER_PAGE}&page=${page}&sort=updated`
-        : `https://api.github.com/users/${member.social.github}/starred?per_page=${PER_PAGE}&page=${page}`
+        ? `https://api.github.com/users/${member.social.githubUser}/repos?per_page=${PER_PAGE}&page=${page}&sort=updated`
+        : `https://api.github.com/users/${member.social.githubUser}/starred?per_page=${PER_PAGE}&page=${page}`
 
     try {
       const res = await fetch(endpoint)
