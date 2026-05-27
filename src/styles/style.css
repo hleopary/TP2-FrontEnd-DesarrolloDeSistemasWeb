@@ -493,6 +493,69 @@ a { text-decoration: none; color: inherit; }
 .minuta-item__body p { font-family: var(--font-body); color: var(--on-surface-variant); line-height: 1.7; margin-bottom: 0.75rem; }
 .minuta-item__body ul { padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--on-surface-variant); line-height: 1.6; }
 
+/* ── Bitácora: Flujo de Trabajo ── */
+.workflow-grid { display: grid; gap: 1.2rem; }
+.workflow-card { background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: 1.8rem; box-shadow: 0 12px 30px rgba(27, 27, 30, 0.05); border: 1px solid var(--outline-variant); }
+.workflow-card__icon { font-size: 2rem; color: var(--primary); margin-bottom: 0.8rem; display: block; }
+.workflow-card h3 { font-family: var(--font-headline); font-size: 1.15rem; font-weight: 700; color: var(--on-surface); margin-bottom: 0.6rem; }
+.workflow-card p { font-family: var(--font-body); color: var(--on-surface-variant); line-height: 1.7; margin-bottom: 0.8rem; font-size: 0.95rem; }
+.workflow-card code { font-family: var(--font-mono, "Fira Code", monospace); background-color: var(--surface-container); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85rem; color: var(--primary); }
+.workflow-card ul { padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; color: var(--on-surface-variant); line-height: 1.6; font-size: 0.93rem; }
+.workflow-card ul code { font-size: 0.8rem; }
+
+/* ── Bitácora: Justificación Migración ── */
+.migration-grid { display: grid; gap: 1.2rem; }
+.migration-card { background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: 1.8rem; box-shadow: 0 12px 30px rgba(27, 27, 30, 0.05); border: 1px solid var(--outline-variant); }
+.migration-card h3 { font-family: var(--font-headline); font-size: 1.1rem; font-weight: 700; color: var(--on-surface); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem; }
+.migration-card h3 .material-symbols-outlined { font-size: 1.35rem; color: var(--primary); }
+.migration-card p { font-family: var(--font-body); color: var(--on-surface-variant); line-height: 1.7; font-size: 0.95rem; }
+.migration-card code { font-family: var(--font-mono, "Fira Code", monospace); background-color: var(--surface-container); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85rem; color: var(--primary); }
+
+/* ── Bitácora: Roles del Equipo ── */
+.roles-grid { display: grid; gap: 1.2rem; }
+.role-card { background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: 1.8rem; box-shadow: 0 12px 30px rgba(27, 27, 30, 0.05); border: 1px solid var(--outline-variant); border-left: 4px solid var(--primary); }
+.role-card__name { font-family: var(--font-headline); font-size: 1.25rem; font-weight: 700; color: var(--on-surface); margin-bottom: 0.2rem; }
+.role-card__rol { display: inline-block; font-family: var(--font-label); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); background-color: var(--primary-container); padding: 0.2rem 0.65rem; border-radius: var(--radius-full); margin-bottom: 1rem; }
+.role-card__list { padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.45rem; color: var(--on-surface-variant); line-height: 1.6; font-size: 0.93rem; }
+
+/* ── Bitácora: Árbol de Renderizado ── */
+.tree-diagram { background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: 2rem; box-shadow: 0 12px 30px rgba(27, 27, 30, 0.05); border: 1px solid var(--outline-variant); overflow-x: auto; }
+
+.rt-list { list-style: none; padding: 0; margin: 0; }
+.rt-item { margin: 0; padding: 0; }
+.rt-row { display: flex; align-items: baseline; gap: 0.4rem; padding: 0.35rem 0; font-family: var(--font-mono, "Fira Code", "Cascadia Code", "Consolas", monospace); font-size: 0.9rem; line-height: 1.6; white-space: nowrap; }
+.rt-connector { color: var(--outline, #c4c4c4); min-width: 2rem; text-align: right; user-select: none; }
+.rt-line { letter-spacing: 0; }
+
+.rt-label { font-weight: 500; }
+.rt-label--root { color: var(--primary); font-weight: 700; font-size: 0.95rem; }
+.rt-label--context { color: #7c3aed; font-weight: 600; }
+.rt-label--layout { color: #0ea5e9; font-weight: 600; }
+.rt-label--route { color: #059669; font-weight: 600; }
+.rt-label--component { color: var(--on-surface-variant); }
+.rt-label--leaf { color: var(--on-surface-variant); font-weight: 400; }
+.rt-label--nav { color: #d97706; font-weight: 600; }
+
+.rt-hint { font-size: 0.78rem; color: var(--on-surface-variant); opacity: 0.7; margin-left: 0.5rem; font-style: italic; }
+
+/* Dark mode: tree colors */
+.dark .rt-label--context { color: #a78bfa; }
+.dark .rt-label--layout { color: #38bdf8; }
+.dark .rt-label--route { color: #34d399; }
+.dark .rt-label--nav { color: #fbbf24; }
+.dark .rt-connector { color: rgba(255, 255, 255, 0.2); }
+
+/* ── Bitácora Ampliada: Responsive ── */
+@media (min-width: 768px) {
+  .workflow-grid { grid-template-columns: repeat(3, 1fr); }
+  .migration-grid { grid-template-columns: repeat(2, 1fr); }
+  .roles-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .migration-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 /* --------------------------------------------------------------------------
    9. DARK MODE
    -------------------------------------------------------------------------- */
@@ -689,6 +752,35 @@ a { text-decoration: none; color: inherit; }
 
 .dark .team-section {
 	background-color: var(--surface);
+}
+
+/* ── Dark Mode: Bitácora Ampliada ── */
+.dark .workflow-card,
+.dark .migration-card,
+.dark .role-card,
+.dark .tree-diagram {
+	background: linear-gradient(145deg, rgba(19, 19, 19, 0.8), rgba(32, 31, 31, 0.85));
+	border-color: rgba(255, 255, 255, 0.08);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.dark .role-card {
+	border-left-color: var(--primary);
+}
+
+.dark .role-card__rol {
+	color: #3b2f00;
+	background-color: var(--primary-container);
+}
+
+.dark .workflow-card code,
+.dark .migration-card code {
+	background-color: rgba(255, 238, 187, 0.12);
+	color: var(--primary);
+}
+
+.dark .tree-diagram {
+	background: linear-gradient(145deg, rgba(19, 19, 19, 0.8), rgba(32, 31, 31, 0.85));
 }
 
 /* --------------------------------------------------------------------------
