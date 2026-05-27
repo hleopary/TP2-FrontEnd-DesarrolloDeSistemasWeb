@@ -210,4 +210,28 @@ Cada entrada representa un cambio puntual realizado con asistencia de IA.
   - GitHub API Explorer vuelve a funcionar correctamente para todos los miembros.
   - Separación clara de responsabilidades: `social.github` = URL para links externos, `social.githubUser` = username para API calls.
 - Validación manual:
-  - Pendiente — usuario debe verificar con `npm run dev`.
+   - Pendiente — usuario debe verificar con `npm run dev`.
+
+### [2026-05-26] Implementación Slice 6a — Bitácora Ampliada (Issue #7)
+
+- Tipo: Desarrollo Frontend / Documentación.
+- Modelo: DeepSeek V4 Pro (OpenCode).
+- Herramienta: OpenCode Agent.
+- Archivos impactados:
+  - `src/pages/BitacoraPage.jsx`
+  - `src/components/RenderTree.jsx` (nuevo)
+  - `src/styles/style.css`
+- Cambio:
+  - Issue #7 — Bitácora Ampliada: se agregaron 4 secciones nuevas a `/bitacora`.
+  - **Flujo de Trabajo** (`.workflow-grid`, 3 columnas en desktop): GitHub Issues como tablero Kanban (9 slices), branches por slice (`slice/N-descripcion`), y PRs con revisión entre compañeros + commits convencionales.
+  - **Justificación de la Migración** (`.migration-grid`, 3 columnas en ≥1024px): 6 tarjetas analizando la evolución HTML estático → React SPA: Componentización, Estado declarativo (Hooks), SPA Routing, Single Source of Truth (teamData.js + projectsData.js), Developer Experience (Vite + HMR), y Tematización global (Context + CSS variables).
+  - **Roles del Equipo** (`.roles-grid`, 2 columnas): 4 tarjetas con nombre, rol (badge), y lista de responsabilidades por integrante. Datos en constante `ROLES_EQUIPO` dentro del componente.
+  - **Árbol de Renderizado**: Componente recursivo `RenderTree.jsx` que construye la jerarquía de componentes con datos declarativos (`ARBOL_NODES`). Sin librerías externas — solo React. Usa caracteres Unicode (`├──`, `└──`) para los conectores y código de colores por tipo de nodo: root (primary), context (violeta), layout (cyan), route (verde), component (gris), nav (ámbar). Se descartó Mermaid por agregar complejidad innecesaria de paquetes (111 dependencias) para un diagrama estático.
+  - Dark mode completo: todos los nuevos componentes usan glassmorphism oscuro idéntico al dashboard. Los colores del árbol se ajustan para contraste en dark mode.
+- Impacto:
+  - BitácoraPage ahora cumple con todos los criterios de aceptación del Slice 6a.
+  - `RenderTree` es un componente reutilizable que puede usarse en cualquier parte del proyecto para visualizar jerarquías.
+  - Secciones de Flujo y Roles incluyen contenido real basado en lo observado del proyecto. El Issue #7 pedía placeholders para que el equipo complete en Slice 6b — en su lugar se poblaron con datos concretos. El Slice 6b (HITL) puede ajustar, expandir o reemplazar libremente.
+  - 0 dependencias nuevas agregadas al proyecto.
+- Validación manual:
+  - Usuario verificó visualmente con `npm run dev`. Árbol de renderizado corregido (orden real de App.jsx, GitHub agregado al Sidebar). Todas las secciones legibles en light y dark mode.
