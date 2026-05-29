@@ -1,5 +1,7 @@
 # Grupo Clouds - Migración a React (TP2 Frontend)
 
+- [LINK VERCEL](https://tp-2-front-end-desarrollo-de-sistem.vercel.app/)
+
 ## Descripción
 
 Este proyecto es la migración a **React** de la web grupal "Grupo Clouds", originalmente desarrollada en HTML, CSS y Vanilla JS para el TP1. 
@@ -15,10 +17,10 @@ Se ha reestructurado por completo utilizando una arquitectura basada en componen
 
 ## Integrantes
 
-- Eduardo Moreno - [GitHub](https://github.com/EduMMorenolp) 
-- Leandro Paryszewski - [GitHub](https://github.com/hleopary) 
-- Marcelo Moreno - [GitHub](https://github.com/Javiacode) 
-- Melissa Galeano - [GitHub](https://github.com/Molly-ibanez)
+- Eduardo Moreno - [Perfil dinámico en `/eduardo`]
+- Leandro Paryszewski - [Perfil dinámico en `/leandro`]
+- Marcelo Moreno - [Perfil dinámico en `/marcelo`]
+- Melissa Galeano - [Perfil dinámico en `/melissa`]
 
 ## Tecnologías utilizadas
 
