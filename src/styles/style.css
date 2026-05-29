@@ -415,6 +415,194 @@ a { text-decoration: none; color: inherit; }
 .tech-chip__svg { width: 100%; height: 100%; display: block; }
 .tech-chip__label { font-family: var(--font-headline); font-weight: 600; font-size: 0.8125rem; color: var(--on-surface); text-align: center; white-space: nowrap; }
 
+
+/* PROJECT CARRUSEL */
+.projects-section {
+  margin-top: 4rem; 
+}
+
+.project-carousel {
+  --slide-width: 100%;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  overflow: hidden; /* Oculta los slides que están fuera del contenedor */
+  border-radius: var(--radius-xl);
+  background-color: var(--surface-container-low);
+  padding: 1rem ;
+  box-sizing: border-box;
+}
+
+/* Estilos base para las flechas flotantes */
+.project-carousel__arrow {
+  position: absolute;
+  top: 50%; /* Centrado vertical matemático */
+  transform: translateY(-50%); /* Ajuste fino del centro */
+  z-index: 10; /* Asegura que estén por encima de las imágenes */
+  background-color: var(--surface);
+  color: var(--on-surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-full);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto Hover para los botones */
+.project-carousel__arrow:hover {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+  transform: translateY(-50%) scale(1.1); /* Crece un poquito al pasar el mouse */
+}
+
+/* Posicionamiento específico Izquierda / Derecha */
+.project-carousel__arrow--prev {
+  left: 0; 
+}
+
+.project-carousel__arrow--next {
+  right: 0; 
+}
+
+
+.project-carousel__track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-carousel__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out; 
+  transform: translateX(calc(var(--current-index) * -1 * var(--slide-width, 100%)));
+}
+
+/* Tarjeta individual del proyecto */
+.project-card {
+  /* En mobile (por defecto), cada tarjeta ocupa el 100% del ancho */
+  min-width: 100%; 
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.project-card__inner {
+  background-color: var(--surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card__inner:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.project-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--outline-variant);
+}
+
+.project-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card__title {
+  font-family: var(--font-headline);
+  color: var(--on-surface);
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+
+.project-card__tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background-color: transparent; 
+  color: var(--on-surface-variant);
+  
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  
+  padding: 0.35rem 0.85rem; 
+  border-radius: var(--radius-full); 
+  
+  border: 1px solid var(--outline); 
+  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+
+
+.project-card__link {
+  font-family: var(--font-label);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: auto; /* Empuja el enlace hacia abajo */
+  align-self: flex-start;
+  transition: color 0.3s ease;
+}
+
+.project-card__link:hover {
+  color: var(--primary-container);
+}
+
+/* Responsive: Ajustes para pantallas más grandes */
+
+/* Tablet/Desktop pequeño: 2 slides */
+@media (min-width: 768px) {
+  .project-card {
+    min-width: 50%;
+  }
+
+  .project-carousel {
+    --slide-width: 50%; /* Tablet: 2 slides */
+  }
+}
+
+/* Desktop grande: 3 slides */
+@media (min-width: 1024px) {
+  .project-card {
+    min-width: var(--slide-width);
+    box-sizing: border-box;
+  }
+  .project-carousel {
+    --slide-width: 33.333%; /* Desktop: 3 slides */
+  }
+
+  .project-carousel__track {
+  display: flex;
+  }
+}
+
+
 /* INTERESTS */
 .interests { padding: 4rem 0; background-color: var(--surface); transition: background-color 0.5s ease; }
 .interests__inner { max-width: 80rem; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; display: flex; flex-direction: column; gap: 3rem; }

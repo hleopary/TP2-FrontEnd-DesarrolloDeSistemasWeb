@@ -4,6 +4,7 @@ import MovieCarousel from '../components/MovieCarousel'
 import MusicGrid from '../components/MusicGrid'
 import SkillBars from '../components/SkillBars'
 import SocialLinks from '../components/SocialLinks'
+import ProjectCarrusel from '../components/ProjectCarrusel'
 
 export default function ProfilePage({ member }) {
   return (
@@ -91,6 +92,15 @@ export default function ProfilePage({ member }) {
 
       <TechStack stack={member.techStack} />
       <SkillBars stack={member.techStack} />
+
+      <section className="projects-section">
+        <div className="interests__inner">
+          <div className="interests__header">
+            <h2 className="interests__title">Proyectos Destacados</h2>
+          </div>
+          <ProjectCarrusel memberSlug={member.slug} />
+        </div>
+      </section>
 
       <section className="interests">
         <div className="interests__inner">
