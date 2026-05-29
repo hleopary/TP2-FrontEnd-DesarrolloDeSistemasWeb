@@ -131,41 +131,45 @@ const ROLES_EQUIPO = [
   {
     nombre: 'Eduardo Moreno',
     rol: 'Desarrollador Back-End',
+    github: 'https://github.com/EduMMorenolp',
     responsabilidades: [
       'Migración del sitio a React (Vite + SPA)',
-      'Configuración del entorno de build y CI/CD',
-      'Refactorización del estado con Hooks',
-      'Componentización de la UI heredada',
+      'Implementación de Home con tarjetas dinámicas',
+      'Desarrollo de la página de Proyectos con dataset y lightbox',
+      'Refactorización del estado con Hooks y routing',
     ],
   },
   {
     nombre: 'Leandro Paryszewski',
     rol: 'Desarrollador y Soporte',
+    github: 'https://github.com/hleopary',
     responsabilidades: [
-      'Armado de estructura del perfil personal',
+      'Armado de la estructura del perfil personal',
+      'Implementación de SkillBars y SocialLinks en ProfilePage',
       'Curado de contenidos multimedia (películas, discos)',
       'Ajustes de accesibilidad y revisiones responsive',
-      'Soporte en infraestructura y servidores',
     ],
   },
   {
     nombre: 'Melissa Galeano',
     rol: 'Desarrolladora y Tester',
+    github: 'https://github.com/Molly-ibanez',
     responsabilidades: [
-      'Definición de perfil con enfoque en QA/testing',
+      'Definición del perfil con enfoque en QA/testing',
       'Integración de catálogo multimedia personal',
       'Validación manual de flujos de navegación',
-      'Ajustes de consistencia visual en mobile',
+      'Trabajo sobre el carrusel de proyectos en el perfil',
     ],
   },
   {
     nombre: 'Marcelo Moreno',
     rol: 'Product Designer',
+    github: 'https://github.com/Javiacode',
     responsabilidades: [
       'Prototipos visuales y DESIGN.md (Lógica Atmosférica)',
-      'Refactor a CSS modular (BEM) y modo oscuro',
-      'Creación de perfil con carrusel y Spotify Embeds',
-      'Planificación TP2: slices, issues, y arquitectura',
+      'Refactor a CSS modular y modo oscuro',
+      'Bitácora ampliada, flujo de trabajo y árbol de renderizado',
+      'Planificación TP2: slices, issues y arquitectura',
     ],
   },
 ]
@@ -511,6 +515,19 @@ export default function BitacoraPage() {
                 <li>Commits convencionales (<code>feat:</code>, <code>fix:</code>, <code>refactor:</code>)</li>
               </ul>
             </article>
+
+             <article className="workflow-card">
+              <span className="material-symbols-outlined workflow-card__icon">forum</span>
+              <h3>Herramientas de coordinación</h3>
+              <p>
+                Para coordinar avances y resolver bloqueos se usaron canales de comunicación
+                externos al repositorio.
+              </p>
+              <ul>
+                <li>Discord</li>
+                <li>WhatsApp</li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>
@@ -640,7 +657,6 @@ export default function BitacoraPage() {
           </div>
         </div>
       </section>
-
       {/* ── Árbol de Renderizado ── */}
       <section className="bitacora-section bitacora-section--alt">
         <div className="bitacora-section__inner">

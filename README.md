@@ -15,10 +15,10 @@ Se ha reestructurado por completo utilizando una arquitectura basada en componen
 
 ## Integrantes
 
-- Eduardo Moreno - [Perfil dinámico en `/eduardo`]
-- Leandro Paryszewski - [Perfil dinámico en `/leandro`]
-- Marcelo Moreno - [Perfil dinámico en `/marcelo`]
-- Melissa Galeano - [Perfil dinámico en `/melisa`]
+- Eduardo Moreno - [GitHub](https://github.com/EduMMorenolp) 
+- Leandro Paryszewski - [GitHub](https://github.com/hleopary) 
+- Marcelo Moreno - [GitHub](https://github.com/Javiacode) 
+- Melissa Galeano - [GitHub](https://github.com/Molly-ibanez)
 
 ## Tecnologías utilizadas
 
