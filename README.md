@@ -73,3 +73,45 @@ La documentación conceptual de UX/UI, la arquitectura CSS y las minutas inicial
 - [Consigna TP1](../TP-FrontEnd-DesarrolloDeSistemasWeb/Documentacion/Consigna%20TP1%20-%20Markdown.md)
 - [Arquitectura Teórica](../TP-FrontEnd-DesarrolloDeSistemasWeb/Documentacion/Proyecto-Core/Arquitectura.md)
 - [Estilo visual](../TP-FrontEnd-DesarrolloDeSistemasWeb/Documentacion/Proyecto-Core/Estilo-Visual.md)
+
+## Galería de Vistas
+
+A continuación, se presentan las capturas de pantalla automáticas de las diferentes vistas de la aplicación:
+
+### Página Principal (Home)
+![Home](Documentacion/img/captura_home.png)
+
+### Bitácora
+![Bitácora](Documentacion/img/captura_bitacora.png)
+
+### Proyectos
+![Proyectos](Documentacion/img/captura_proyectos.png)
+
+### GitHub
+![GitHub](Documentacion/img/captura_github.png)
+
+### Perfiles del Equipo
+<details>
+  <summary>Eduardo Moreno</summary>
+  
+  ![Perfil Eduardo](Documentacion/img/captura_perfil_eduardo.png)
+</details>
+
+<details>
+  <summary>Leandro Paryszewski</summary>
+  
+  ![Perfil Leandro](Documentacion/img/captura_perfil_leandro.png)
+</details>
+
+<details>
+  <summary>Melissa Galeano</summary>
+  
+  ![Perfil Melissa](Documentacion/img/captura_perfil_melissa.png)
+</details>
+
+<details>
+  <summary>Marcelo Moreno</summary>
+  
+  ![Perfil Marcelo](Documentacion/img/captura_perfil_marcelo.png)
+</details>
+
